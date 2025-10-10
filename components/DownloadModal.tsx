@@ -28,7 +28,7 @@ const DownloadModal: React.FC<DownloadModalProps> = ({ isOpen, onClose, onDownlo
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm">
-      <div className="bg-white rounded-lg shadow-xl p-6 w-full max-w-md m-4">
+      <div className="bg-white rounded-lg shadow-xl p-6 w-full max-w-lg m-4"> {/* Changed max-w-md to max-w-lg */}
         <h3 className="text-lg font-semibold text-slate-800 mb-4">Tải xuống Tệp</h3>
         
         <div className="space-y-4">
