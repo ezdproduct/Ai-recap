@@ -11,18 +11,18 @@ interface RecapDisplayProps {
 }
 
 export const RECAP_TEMPLATE = `
-<h2><strong>Recap Cuộc họp Cập nhật Tiến độ Dự án – [YYYY-MM-DD]</strong></h2>
+<h2><strong>Project Progress Meeting Recap – [YYYY-MM-DD]</strong></h2>
 <p>&nbsp;</p>
-<h3><strong>Executive Summary (Tóm tắt điều hành)</strong></h3>
-<p><em>Tóm tắt những điểm chính, kết quả nổi bật, vấn đề trọng tâm và các quyết định quan trọng nhất của cuộc họp. Ví dụ: Cuộc họp đã thảo luận về tiến độ dự án X, xác định các rủi ro tiềm ẩn và thống nhất các hành động tiếp theo để đảm bảo dự án đi đúng hướng.</em></p>
+<h3><strong>Executive Summary</strong></h3>
+<p><em>Summarize the key points, notable outcomes, central issues, and most important decisions of the meeting. Example: The meeting discussed the progress of project X, identified potential risks, and agreed on next steps to ensure the project stays on track.</em></p>
 <p>&nbsp;</p>
-<h3><strong>Quyết định / Thống nhất</strong></h3>
+<h3><strong>Decisions / Agreements</strong></h3>
 <ul>
-    <li><em>Thống nhất triển khai giai đoạn 2 của dự án vào ngày [YYYY-MM-DD].</em></li>
-    <li><em>Quyết định phân bổ thêm nguồn lực cho đội ngũ phát triển để đẩy nhanh tiến độ.</em></li>
+    <li><em>Agreed to launch Phase 2 of the project on [YYYY-MM-DD].</em></li>
+    <li><em>Decided to allocate additional resources to the development team to accelerate progress.</em></li>
 </ul>
 <p>&nbsp;</p>
-<h3><strong>Action Items (Bảng công việc)</strong></h3>
+<h3><strong>Action Items</strong></h3>
 <table>
     <thead>
         <tr>
@@ -37,29 +37,33 @@ export const RECAP_TEMPLATE = `
     </thead>
     <tbody>
         <tr>
-            <td><em>Hoàn thành báo cáo phân tích thị trường</em></td>
-            <td><em>Nguyễn Văn A</em></td>
+            <td><em>Complete market analysis report</em></td>
+            <td><em>John Doe</em></td>
             <td><em>2024-12-31</em></td>
-          </tr>
+            <td><em>High</em></td>
+            <td><em>N/A</em></td>
+            <td><em>Requires data from Q3</em></td>
+            <td><em>05:30</em></td>
+        </tr>
     </tbody>
 </table>
 <p>&nbsp;</p>
-<h3><strong>Risks &amp; Issues (Rủi ro &amp; Vấn đề)</strong></h3>
+<h3><strong>Risks &amp; Issues</strong></h3>
 <ul>
-    <li><strong>Vấn đề 1: Thiếu hụt nhân sự chủ chốt</strong>
+    <li><strong>Issue 1: Key personnel shortage</strong>
         <ul>
-            <li><strong>Tác động:</strong> <em>Có thể làm chậm tiến độ dự án và ảnh hưởng đến chất lượng công việc.</em></li>
-            <li><strong>Giải pháp:</strong> <em>Đề xuất tuyển dụng thêm 2 lập trình viên cấp cao trong vòng 2 tuần tới.</em></em></li>
+            <li><strong>Impact:</strong> <em>May delay project progress and affect work quality.</em></li>
+            <li><strong>Resolution:</strong> <em>Propose hiring 2 senior developers within the next 2 weeks.</em></em></li>
         </ul>
     </li>
 </ul>
 <p>&nbsp;</p>
-<h3><strong>Next Meeting (Cuộc họp tiếp theo)</strong></h3>
-<p><em>Thời gian: [YYYY-MM-DD] lúc [HH:MM]</em></p>
-<p><em>Nội dung đề xuất: Đánh giá tiến độ tuyển dụng, cập nhật tình hình ngân sách, xem xét bản nháp kế hoạch triển khai tính năng mới.</em></p>
+<h3><strong>Next Meeting</strong></h3>
+<p><em>Time: [YYYY-MM-DD] at [HH:MM] or [TBD]</em></p>
+<p><em>Proposed Agenda: Review recruitment progress, budget update, new feature implementation plan draft review.</em></p>
 <p>&nbsp;</p>
-<h3><strong>Appendix (Tham dự)</strong></h3>
-<p><em>Nguyễn Văn A (Trưởng phòng Dự án), Trần Thị B (Trưởng nhóm Phát triển), Lê Văn C (Đại diện Marketing), Phạm Thị D (Đại diện Tài chính).</em></p>
+<h3><strong>Appendix (Attendees)</strong></h3>
+<p><em>John Doe (Project Manager), Jane Smith (Development Lead), Peter Jones (Marketing Rep), Sarah Lee (Finance Rep).</em></p>
 `;
 
 const RecapSkeleton: React.FC = () => {
@@ -80,7 +84,7 @@ const RecapDisplay: React.FC<RecapDisplayProps> = ({ recapText, isLoading, onGen
       {/* Header */}
       <div className="pb-4 border-b border-gray-200">
         <h2 className="text-2xl sm:text-3xl font-bold text-slate-900">
-          Tóm tắt Cuộc họp
+          Meeting Recap
         </h2>
       </div>
 
@@ -107,21 +111,21 @@ const RecapDisplay: React.FC<RecapDisplayProps> = ({ recapText, isLoading, onGen
                       autoplay
                       className="w-32 h-32"
                     />
-                    <p className="font-semibold mt-4">Đang tạo bản tóm tắt...</p>
-                    <p className="text-sm">Vui lòng đợi trong giây lát.</p>
+                    <p className="font-semibold mt-4">Generating recap...</p>
+                    <p className="text-sm">Please wait a moment.</p>
                   </div>
                 ) : (
                   <>
                     {hasAudio && (
                       <>
                         <SummarizeIcon className="w-16 h-16 text-gray-300 mx-auto mb-4" />
-                        <h3 className="text-xl font-semibold text-slate-700">Sẵn sàng để tóm tắt</h3>
-                        <p className="text-slate-500 max-w-xs mx-auto mt-2 mb-6">Nhấn nút bên dưới để AI phân tích và tạo bản tóm tắt.</p>
+                        <h3 className="text-xl font-semibold text-slate-700">Ready to summarize</h3>
+                        <p className="text-slate-500 max-w-xs mx-auto mt-2 mb-6">Press the button below for AI to analyze and generate the recap.</p>
                         <button
                           onClick={onGenerate}
                           className="px-6 py-3 rounded-lg bg-blue-600 text-white font-semibold hover:bg-blue-700 transition-colors shadow-lg hover:shadow-blue-600/50"
                         >
-                          Tạo Tóm tắt
+                          Generate Recap
                         </button>
                       </>
                     )}

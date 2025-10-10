@@ -70,14 +70,13 @@ export const useAppManager = () => {
   const handleAudioReady = useCallback((blob: Blob, source: 'upload' | 'record') => {
     handleClear();
     setAudioBlob(blob);
-    if (source === 'upload') {
-      setActiveView(ActiveView.Recap);
-      setRecap('');
-      generateRecap(blob);
-    } else {
-      setActiveView(ActiveView.Transcript);
-    }
-  }, [handleClear, generateRecap]);
+    // Trigger both recap and transcription
+    setRecap(''); // Clear previous recap
+    generateRecap(blob);
+    setTranscription(''); // Clear previous transcription
+    transcribeAudio(blob);
+    setActiveView(ActiveView.Recap); // Default to recap view after processing starts
+  }, [handleClear, generateRecap, transcribeAudio]);
 
   const handleRegenerate = useCallback(() => {
     if (!audioBlob) return;
