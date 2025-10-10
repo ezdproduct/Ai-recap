@@ -11,59 +11,59 @@ interface RecapDisplayProps {
 }
 
 export const RECAP_TEMPLATE = `
-<h2><strong>Project Progress Meeting Recap – [YYYY-MM-DD]</strong></h2>
+<h2><strong>Tóm tắt cuộc họp tiến độ dự án – [YYYY-MM-DD]</strong></h2>
 <p>&nbsp;</p>
-<h3><strong>Executive Summary</strong></h3>
-<p><em>Summarize the key points, notable outcomes, central issues, and most important decisions of the meeting. Example: The meeting discussed the progress of project X, identified potential risks, and agreed on next steps to ensure the project stays on track.</em></p>
+<h3><strong>Tóm tắt điều hành</strong></h3>
+<p><em>Tóm tắt các điểm chính, kết quả đáng chú ý, các vấn đề trọng tâm và các quyết định quan trọng nhất của cuộc họp. Ví dụ: Cuộc họp đã thảo luận về tiến độ của dự án X, xác định các rủi ro tiềm ẩn và thống nhất các bước tiếp theo để đảm bảo dự án đi đúng hướng.</em></p>
 <p>&nbsp;</p>
-<h3><strong>Decisions / Agreements</strong></h3>
+<h3><strong>Quyết định / Thỏa thuận</strong></h3>
 <ul>
-    <li><em>Agreed to launch Phase 2 of the project on [YYYY-MM-DD].</em></li>
-    <li><em>Decided to allocate additional resources to the development team to accelerate progress.</em></li>
+    <li><em>Đồng ý khởi động Giai đoạn 2 của dự án vào [YYYY-MM-DD].</em></li>
+    <li><em>Quyết định phân bổ thêm nguồn lực cho nhóm phát triển để đẩy nhanh tiến độ.</em></li>
 </ul>
 <p>&nbsp;</p>
-<h3><strong>Action Items</strong></h3>
+<h3><strong>Mục hành động</strong></h3>
 <table>
     <thead>
         <tr>
-            <th>Task</th>
-            <th>Owner</th>
-            <th>Deadline (YYYY-MM-DD)</th>
-            <th>Priority</th>
-            <th>Dependency</th>
-            <th>Notes</th>
-            <th>Source (mm:ss)</th>
+            <th>Nhiệm vụ</th>
+            <th>Người chịu trách nhiệm</th>
+            <th>Hạn chót (YYYY-MM-DD)</th>
+            <th>Mức độ ưu tiên</th>
+            <th>Phụ thuộc</th>
+            <th>Ghi chú</th>
+            <th>Nguồn (mm:ss)</th>
         </tr>
     </thead>
     <tbody>
         <tr>
-            <td><em>Complete market analysis report</em></td>
+            <td><em>Hoàn thành báo cáo phân tích thị trường</em></td>
             <td><em>John Doe</em></td>
             <td><em>2024-12-31</em></td>
-            <td><em>High</em></td>
+            <td><em>Cao</em></td>
             <td><em>N/A</em></td>
-            <td><em>Requires data from Q3</em></td>
+            <td><em>Yêu cầu dữ liệu từ Q3</em></td>
             <td><em>05:30</em></td>
         </tr>
     </tbody>
 </table>
 <p>&nbsp;</p>
-<h3><strong>Risks &amp; Issues</strong></h3>
+<h3><strong>Rủi ro &amp; Vấn đề</strong></h3>
 <ul>
-    <li><strong>Issue 1: Key personnel shortage</strong>
+    <li><strong>Vấn đề 1: Thiếu hụt nhân sự chủ chốt</strong>
         <ul>
-            <li><strong>Impact:</strong> <em>May delay project progress and affect work quality.</em></li>
-            <li><strong>Resolution:</strong> <em>Propose hiring 2 senior developers within the next 2 weeks.</em></em></li>
+            <li><strong>Tác động:</strong> <em>Có thể làm chậm tiến độ dự án và ảnh hưởng đến chất lượng công việc.</em></li>
+            <li><strong>Giải pháp:</strong> <em>Đề xuất tuyển dụng 2 nhà phát triển cấp cao trong vòng 2 tuần tới.</em></em></li>
         </ul>
     </li>
 </ul>
 <p>&nbsp;</p>
-<h3><strong>Next Meeting</strong></h3>
-<p><em>Time: [YYYY-MM-DD] at [HH:MM] or [TBD]</em></p>
-<p><em>Proposed Agenda: Review recruitment progress, budget update, new feature implementation plan draft review.</em></p>
+<h3><strong>Cuộc họp tiếp theo</strong></h3>
+<p><em>Thời gian: [YYYY-MM-DD] lúc [HH:MM] hoặc [Chưa xác định]</em></p>
+<p><em>Chương trình nghị sự đề xuất: Xem xét tiến độ tuyển dụng, cập nhật ngân sách, xem xét bản nháp kế hoạch triển khai tính năng mới.</em></p>
 <p>&nbsp;</p>
-<h3><strong>Appendix (Attendees)</strong></h3>
-<p><em>John Doe (Project Manager), Jane Smith (Development Lead), Peter Jones (Marketing Rep), Sarah Lee (Finance Rep).</em></p>
+<h3><strong>Phụ lục (Người tham dự)</strong></h3>
+<p><em>John Doe (Quản lý dự án), Jane Smith (Trưởng nhóm phát triển), Peter Jones (Đại diện Marketing), Sarah Lee (Đại diện Tài chính).</em></p>
 `;
 
 const RecapSkeleton: React.FC = () => {
