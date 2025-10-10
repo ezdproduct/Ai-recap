@@ -25,10 +25,10 @@ export const useGeminiTranscription = ({
     setIsLoading(true);
     setError(null);
     onTranscriptionUpdate(''); // Clear previous transcription
-    onProgressUpdate('Preparing audio...');
+    onProgressUpdate('Đang chuẩn bị âm thanh...');
 
     try {
-      onProgressUpdate('Converting audio for transcription...');
+      onProgressUpdate('Đang chuyển đổi âm thanh để ghi chép...');
       const base64Data = await blobToBase64(audioBlob);
       const audioPart = {
         inlineData: { data: base64Data, mimeType: audioBlob.type || 'audio/webm' },
@@ -36,14 +36,14 @@ export const useGeminiTranscription = ({
       const textPart = { text: "Transcribe this audio recording into English. It is crucial to identify and label each speaker (e.g., Speaker 1, Speaker 2, etc.). Provide timestamps for the start of each speaker's turn. Format the output clearly, with each utterance on a new line." };
 
       const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
-      onProgressUpdate('Sending audio to AI...');
+      onProgressUpdate('Đang gửi âm thanh đến AI...');
       
       const responseStream = await ai.models.generateContentStream({
         model: 'gemini-2.5-flash',
         contents: { parts: [audioPart, textPart] },
       });
 
-      onProgressUpdate('Receiving transcription...');
+      onProgressUpdate('Đang nhận bản ghi...');
       let fullTranscription = '';
       for await (const chunk of responseStream) {
         fullTranscription += chunk.text;

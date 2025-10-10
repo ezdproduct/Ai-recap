@@ -84,7 +84,7 @@ const RecapDisplay: React.FC<RecapDisplayProps> = ({ recapText, isLoading, onGen
       {/* Header */}
       <div className="pb-4 border-b border-gray-200">
         <h2 className="text-2xl sm:text-3xl font-bold text-slate-900">
-          Meeting Recap
+          Tóm tắt cuộc họp
         </h2>
       </div>
 
@@ -111,21 +111,21 @@ const RecapDisplay: React.FC<RecapDisplayProps> = ({ recapText, isLoading, onGen
                       autoplay
                       className="w-32 h-32"
                     />
-                    <p className="font-semibold mt-4">Generating recap...</p>
-                    <p className="text-sm">Please wait a moment.</p>
+                    <p className="font-semibold mt-4">Đang tạo tóm tắt...</p>
+                    <p className="text-sm">Vui lòng đợi một lát.</p>
                   </div>
                 ) : (
                   <>
                     {hasAudio && (
                       <>
                         <SummarizeIcon className="w-16 h-16 text-gray-300 mx-auto mb-4" />
-                        <h3 className="text-xl font-semibold text-slate-700">Ready to summarize</h3>
-                        <p className="text-slate-500 max-w-xs mx-auto mt-2 mb-6">Press the button below for AI to analyze and generate the recap.</p>
+                        <h3 className="text-xl font-semibold text-slate-700">Sẵn sàng tóm tắt</h3>
+                        <p className="text-slate-500 max-w-xs mx-auto mt-2 mb-6">Nhấn nút bên dưới để AI phân tích và tạo bản tóm tắt.</p>
                         <button
                           onClick={onGenerate}
                           className="px-6 py-3 rounded-lg bg-blue-600 text-white font-semibold hover:bg-blue-700 transition-colors shadow-lg hover:shadow-blue-600/50"
                         >
-                          Generate Recap
+                          Tạo tóm tắt
                         </button>
                       </>
                     )}
