@@ -28,7 +28,7 @@ const DownloadModal: React.FC<DownloadModalProps> = ({ isOpen, onClose, onDownlo
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm">
-      <div className="bg-white rounded-lg shadow-xl p-6 w-full max-w-lg m-4"> {/* Changed max-w-md to max-w-lg */}
+      <div className="bg-white rounded-lg shadow-xl p-6 w-full max-w-lg m-4">
         <h3 className="text-lg font-semibold text-slate-800 mb-4">Tải xuống Tệp</h3>
         
         <div className="space-y-4">
@@ -49,7 +49,7 @@ const DownloadModal: React.FC<DownloadModalProps> = ({ isOpen, onClose, onDownlo
             <label className="block text-sm font-medium text-slate-600 mb-2">
               Định dạng
             </label>
-            <div className="flex items-center gap-4">
+            <div className="flex flex-wrap gap-x-6 gap-y-2"> {/* Changed from 'flex items-center gap-4' */}
               <label className="flex items-center gap-2 cursor-pointer">
                 <input
                   type="radio"
