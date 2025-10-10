@@ -51,7 +51,7 @@ const Sidebar: React.FC<SidebarProps> = ({ isSidebarOpen, activeView, onViewChan
         {isSidebarOpen && (
           <>
             <div className="mb-4 px-4">
-              <img src="/assets/images/Logo CRED.png" alt="CRED Logo" className="w-full h-auto max-h-24 object-contain" />
+              <img src="/assets/images/logo-cred.png" alt="CRED Logo" className="w-full h-auto max-h-24 object-contain" />
             </div>
             <div className="px-4 text-xs text-slate-500 space-y-1 mb-4">
               <p className="font-semibold text-slate-700">Thông tin liên hệ:</p>
