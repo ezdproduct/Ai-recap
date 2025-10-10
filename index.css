@@ -1,0 +1,53 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom Jodit styles */
+.jodit-container:not(.jodit_inline) {
+    background-color: #f5f5f6;
+    border: 1px solid #94a3b8; /* Cập nhật màu viền đậm hơn (slate-400) */
+    border-radius: 3px;
+}
+
+/* Hide scrollbar for Jodit editor content */
+.jodit-wysiwyg {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+
+.jodit-wysiwyg::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera */
+}
+
+/* Custom Prose styles for Recap Display */
+.prose h3 {
+    @apply font-semibold text-slate-800 mb-2 mt-6 text-lg;
+}
+
+.prose p, .prose ul, .prose ol {
+    @apply text-slate-600 text-base;
+}
+
+.prose strong {
+    @apply text-slate-900;
+}
+
+.prose table {
+    @apply w-full text-sm mt-4;
+}
+
+.prose thead {
+    @apply border-b-2 border-gray-200;
+}
+
+.prose th {
+    @apply px-2 py-3 text-left font-bold text-gray-500 uppercase tracking-wider;
+}
+
+.prose tbody tr {
+    @apply border-b border-gray-100;
+}
+
+.prose td {
+    @apply px-2 py-3 align-top text-slate-600;
+}

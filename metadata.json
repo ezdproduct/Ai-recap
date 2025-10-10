@@ -1,0 +1,5 @@
+{
+  "name": "AI Voice Transcriber",
+  "description": "An AI-powered application to transcribe and summarize audio files using the Gemini API.",
+  "requestFramePermissions": []
+}
